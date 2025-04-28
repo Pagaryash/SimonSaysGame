@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/Pagaryash/SimonSaysGame.git', credentialsId: 'github-pat'
+               git url: 'https://github.com/Pagaryash/SimonSaysGame.git', credentialsId: 'github-pat', branch: 'main'
             }
         }
         stage('Install Dependencies') {
