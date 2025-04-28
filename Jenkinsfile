@@ -19,9 +19,18 @@ pipeline {
                 sh 'npm test'
             }
         }
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Building Simon Says Game...'
+                sh 'docker build -t simonsaysgame .'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh '''
+                docker stop simonsaysgame || true
+                docker rm simonsaysgame || true
+                docker run -d --name simonsaysgame -p 3000:3000 simonsaysgame
+                '''
             }
         }
     }
