@@ -21,15 +21,15 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t simonsaysgame .'
+                sh '/usr/local/bin/docker build -t simonsaysgame . || /Applications/Docker.app/Contents/Resources/bin/docker build -t simonsaysgame .'
             }
         }
         stage('Deploy') {
             steps {
                 sh '''
-                docker stop simonsaysgame || true
-                docker rm simonsaysgame || true
-                docker run -d --name simonsaysgame -p 3000:3000 simonsaysgame
+                /usr/local/bin/docker stop simonsaysgame || /Applications/Docker.app/Contents/Resources/bin/docker stop simonsaysgame || true
+                /usr/local/bin/docker rm simonsaysgame || /Applications/Docker.app/Contents/Resources/bin/docker rm simonsaysgame || true
+                /usr/local/bin/docker run -d --name simonsaysgame -p 3000:3000 simonsaysgame || /Applications/Docker.app/Contents/Resources/bin/docker run -d --name simonsaysgame -p 3000:3000 simonsaysgame
                 '''
             }
         }
