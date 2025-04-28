@@ -1,0 +1,23 @@
+{
+  "name": "simonsaysgame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pagaryash/SimonSaysGame.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pagaryash/SimonSaysGame/issues"
+  },
+  "homepage": "https://github.com/Pagaryash/SimonSaysGame#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
