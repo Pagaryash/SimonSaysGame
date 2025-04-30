@@ -86,3 +86,5 @@ function reset() {
     userSeq = [];
     level = 0;
 }// Test comment
+
+let mul = 2 * 2;
